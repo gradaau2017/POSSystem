@@ -1,0 +1,10 @@
+E:\code\NationalCriminalsDatabase\NCD.Models\bin\Debug\NCD.Models.dll
+E:\code\NationalCriminalsDatabase\NCD.Models\bin\Debug\NCD.Models.pdb
+E:\code\NationalCriminalsDatabase\NCD.Models\obj\Debug\NCD.Models.csprojResolveAssemblyReference.cache
+E:\code\NationalCriminalsDatabase\NCD.Models\obj\Debug\NCD.Models.dll
+E:\code\NationalCriminalsDatabase\NCD.Models\obj\Debug\NCD.Models.pdb
+D:\My Files\code\NCD\NCD.Models\bin\Debug\NCD.Models.dll
+D:\My Files\code\NCD\NCD.Models\bin\Debug\NCD.Models.pdb
+D:\My Files\code\NCD\NCD.Models\obj\Debug\NCD.Models.csprojResolveAssemblyReference.cache
+D:\My Files\code\NCD\NCD.Models\obj\Debug\NCD.Models.dll
+D:\My Files\code\NCD\NCD.Models\obj\Debug\NCD.Models.pdb

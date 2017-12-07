@@ -1,0 +1,13 @@
+D:\code\MoencoPOS\MoencoPOS.Services\bin\Debug\MoencoPOS.Services.dll
+D:\code\MoencoPOS\MoencoPOS.Services\bin\Debug\MoencoPOS.Services.pdb
+D:\code\MoencoPOS\MoencoPOS.Services\bin\Debug\MoencoPOS.DAL.dll
+D:\code\MoencoPOS\MoencoPOS.Services\bin\Debug\MoencoPOS.Models.dll
+D:\code\MoencoPOS\MoencoPOS.Services\bin\Debug\EntityFramework.dll
+D:\code\MoencoPOS\MoencoPOS.Services\bin\Debug\log4net.dll
+D:\code\MoencoPOS\MoencoPOS.Services\bin\Debug\MoencoPOS.DAL.pdb
+D:\code\MoencoPOS\MoencoPOS.Services\bin\Debug\MoencoPOS.Models.pdb
+D:\code\MoencoPOS\MoencoPOS.Services\bin\Debug\EntityFramework.xml
+D:\code\MoencoPOS\MoencoPOS.Services\bin\Debug\log4net.xml
+D:\code\MoencoPOS\MoencoPOS.Services\obj\Debug\MoencoPOS.Services.csprojResolveAssemblyReference.cache
+D:\code\MoencoPOS\MoencoPOS.Services\obj\Debug\MoencoPOS.Services.dll
+D:\code\MoencoPOS\MoencoPOS.Services\obj\Debug\MoencoPOS.Services.pdb

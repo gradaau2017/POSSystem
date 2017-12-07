@@ -1,0 +1,5 @@
+D:\code\MoencoPOS\MoencoPOS.Models\bin\Debug\MoencoPOS.Models.dll
+D:\code\MoencoPOS\MoencoPOS.Models\bin\Debug\MoencoPOS.Models.pdb
+D:\code\MoencoPOS\MoencoPOS.Models\obj\Debug\MoencoPOS.Models.dll
+D:\code\MoencoPOS\MoencoPOS.Models\obj\Debug\MoencoPOS.Models.pdb
+D:\code\MoencoPOS\MoencoPOS.Models\obj\Debug\MoencoPOS.Models.csprojResolveAssemblyReference.cache

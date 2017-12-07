@@ -1,0 +1,22 @@
+E:\code\NationalCriminalsDatabase\NCD.DAL\bin\Debug\NCD.DAL.dll
+E:\code\NationalCriminalsDatabase\NCD.DAL\bin\Debug\NCD.DAL.pdb
+E:\code\NationalCriminalsDatabase\NCD.DAL\bin\Debug\EntityFramework.dll
+E:\code\NationalCriminalsDatabase\NCD.DAL\bin\Debug\log4net.dll
+E:\code\NationalCriminalsDatabase\NCD.DAL\bin\Debug\NCD.Models.dll
+E:\code\NationalCriminalsDatabase\NCD.DAL\bin\Debug\NCD.Models.pdb
+E:\code\NationalCriminalsDatabase\NCD.DAL\bin\Debug\EntityFramework.xml
+E:\code\NationalCriminalsDatabase\NCD.DAL\bin\Debug\log4net.xml
+E:\code\NationalCriminalsDatabase\NCD.DAL\obj\Debug\NCD.DAL.csprojResolveAssemblyReference.cache
+E:\code\NationalCriminalsDatabase\NCD.DAL\obj\Debug\NCD.DAL.dll
+E:\code\NationalCriminalsDatabase\NCD.DAL\obj\Debug\NCD.DAL.pdb
+D:\My Files\code\NCD\NCD.DAL\bin\Debug\NCD.DAL.dll
+D:\My Files\code\NCD\NCD.DAL\bin\Debug\NCD.DAL.pdb
+D:\My Files\code\NCD\NCD.DAL\bin\Debug\EntityFramework.dll
+D:\My Files\code\NCD\NCD.DAL\bin\Debug\log4net.dll
+D:\My Files\code\NCD\NCD.DAL\bin\Debug\NCD.Models.dll
+D:\My Files\code\NCD\NCD.DAL\bin\Debug\NCD.Models.pdb
+D:\My Files\code\NCD\NCD.DAL\bin\Debug\EntityFramework.xml
+D:\My Files\code\NCD\NCD.DAL\bin\Debug\log4net.xml
+D:\My Files\code\NCD\NCD.DAL\obj\Debug\NCD.DAL.csprojResolveAssemblyReference.cache
+D:\My Files\code\NCD\NCD.DAL\obj\Debug\NCD.DAL.dll
+D:\My Files\code\NCD\NCD.DAL\obj\Debug\NCD.DAL.pdb
