@@ -6,12 +6,16 @@ namespace MoencoPOS.DAL
 {
     public class MoencoPOSContext : DbContext
     {
-        public MoencoPOSContext() : base("NcdContext")
+        public MoencoPOSContext() : base("MoencoPOSContext")
         {
         }
 
         public DbSet<Address> Addresses { get; set; }
         public DbSet<SalesInvoice> SalesInvoices { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Branch> Branches { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Stock> Stocks { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

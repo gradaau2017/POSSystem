@@ -42,6 +42,8 @@ namespace MoencoPOS.Infrastructure
 
             kernel.Bind<MoencoPOS.Services.ISalesInvoiceService>().To<MoencoPOS.Services.SalesInvoiceService>();
 
+            kernel.Bind<MoencoPos.Product.Services.ICategoryService>().To<MoencoPos.Product.Services.CategoryService>();
+
             kernel.Bind<MoencoPOS.DAL.UnitOfWork.IUnitOfWork>().To<MoencoPOS.DAL.UnitOfWork.UnitOfWork>();
         }
     }

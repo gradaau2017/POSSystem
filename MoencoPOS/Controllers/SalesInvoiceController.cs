@@ -14,7 +14,7 @@ namespace MoencoPOS.Controllers
 {
     public class SalesController : Controller
     {
-        private MoencoPOSContext db = new MoencoPOSContext();
+       // private MoencoPOSContext db = new MoencoPOSContext();
 
         private readonly ISalesInvoiceService _salesService;
 
@@ -31,11 +31,11 @@ namespace MoencoPOS.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+            //if (disposing)
+            //{
+            //    db.Dispose();
+            //}
+            //base.Dispose(disposing);
         }
     }
 }

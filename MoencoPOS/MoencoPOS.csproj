@@ -167,6 +167,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SalesInvoiceController.cs" />
     <Compile Include="Global.asax.cs">
@@ -223,6 +224,11 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -244,6 +250,10 @@
     <ProjectReference Include="..\MoencoPOS.Models\MoencoPOS.Models.csproj">
       <Project>{12c866fd-7e2a-41e0-8d1e-856e2c847702}</Project>
       <Name>MoencoPOS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoencoPos.Product.Services\MoencoPos.Product.Services.csproj">
+      <Project>{c6fcb914-1c3f-4ba6-9dc6-37b68b221543}</Project>
+      <Name>MoencoPos.Product.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\MoencoPOS.Services\MoencoPOS.Services.csproj">
       <Project>{b3276134-c056-4d0b-9646-98cfa4fdfaa4}</Project>

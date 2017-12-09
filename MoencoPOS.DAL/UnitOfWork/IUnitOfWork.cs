@@ -12,6 +12,7 @@ namespace MoencoPOS.DAL.UnitOfWork
         Database Database { get; }
         IGenericRepository<Address> AddressRepository { get; }
         IGenericRepository<SalesInvoice> SalesInvoiceRepository { get; }
+        IGenericRepository<Category> CategoryRepository { get; }
 
         void Save();
 

@@ -9,3 +9,14 @@ D:\code\MoencoPOS\MoencoPOS.DAL\bin\Debug\log4net.xml
 D:\code\MoencoPOS\MoencoPOS.DAL\obj\Debug\MoencoPOS.DAL.csprojResolveAssemblyReference.cache
 D:\code\MoencoPOS\MoencoPOS.DAL\obj\Debug\MoencoPOS.DAL.dll
 D:\code\MoencoPOS\MoencoPOS.DAL\obj\Debug\MoencoPOS.DAL.pdb
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.DAL\bin\Debug\MoencoPOS.DAL.dll
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.DAL\bin\Debug\MoencoPOS.DAL.pdb
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.DAL\bin\Debug\EntityFramework.dll
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.DAL\bin\Debug\log4net.dll
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.DAL\bin\Debug\MoencoPOS.Models.dll
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.DAL\bin\Debug\MoencoPOS.Models.pdb
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.DAL\bin\Debug\EntityFramework.xml
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.DAL\bin\Debug\log4net.xml
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.DAL\obj\Debug\MoencoPOS.DAL.csprojResolveAssemblyReference.cache
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.DAL\obj\Debug\MoencoPOS.DAL.dll
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.DAL\obj\Debug\MoencoPOS.DAL.pdb

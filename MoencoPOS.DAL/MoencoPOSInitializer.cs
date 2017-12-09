@@ -26,6 +26,15 @@ namespace MoencoPOS.DAL
             };
             salesInvoices.ForEach(s => context.SalesInvoices.Add(s));
             context.SaveChanges();
+
+            var categories = new List<Category>
+            {
+                new Category { CategoryName="Car",CategoryDescription="Toyota Cars."},
+                new Category {CategoryName="Tyres",CategoryDescription="Tyre for diffrent model Toyota Cars."}
+            };
+            categories.ForEach(s => context.Categories.Add(s));
+            context.SaveChanges();
+
         }
     }
 }
