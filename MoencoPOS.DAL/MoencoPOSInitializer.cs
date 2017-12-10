@@ -35,6 +35,14 @@ namespace MoencoPOS.DAL
             categories.ForEach(s => context.Categories.Add(s));
             context.SaveChanges();
 
+            var branches = new List<Branch>
+            {
+                new Branch { BranchName="Main",BranchLocation="Addis Ababa", BranchDescription="Country Main Branch"},
+                new Branch {BranchName="South Branch",BranchLocation="Awassa", BranchDescription="SNNP Branch in Awassa"}
+            };
+            categories.ForEach(s => context.Categories.Add(s));
+            context.SaveChanges();
+
         }
     }
 }

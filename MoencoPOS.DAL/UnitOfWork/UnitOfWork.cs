@@ -49,6 +49,13 @@ namespace MoencoPOS.DAL.UnitOfWork
             get { return this.categoryRepository ?? (this.categoryRepository = new GenericRepository<Category>(_context)); }
         }
 
+        public IGenericRepository<Branch> branchRepository;
+        public IGenericRepository<Branch> BranchRepository
+        {
+            get { return this.branchRepository ?? (this.branchRepository = new GenericRepository<Branch>(_context)); }
+        }
+
+
 
         private readonly ILog _log;
         public void Save()
