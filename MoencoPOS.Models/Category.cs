@@ -19,6 +19,6 @@ namespace MoencoPOS.Models
         [DisplayName("Category Description")]
         public string CategoryDescription { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Productc> Products { get; set; }
     }
 }

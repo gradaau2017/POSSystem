@@ -43,6 +43,15 @@ namespace MoencoPOS.DAL
             categories.ForEach(s => context.Categories.Add(s));
             context.SaveChanges();
 
+            var productcs = new List<Productc>
+            {
+                new Productc { ProductName="Toyota Vitz",ProductDescription="Toyota Vitz 2014", Model="Vitz 2014",UnitOfMeasure="Pcs",UnitCost=200000.00M,UnitPrice=250000.00M,CategoryId=1},
+                new Productc {ProductName="Toyota Yaris",ProductDescription="Toyota Yaris 2012", Model="Yaris 2012",UnitOfMeasure="Pcs",UnitCost=350000.00M,UnitPrice=400000.00M,CategoryId=1}
+            };
+            productcs.ForEach(s => context.Productcs.Add(s));
+            context.SaveChanges();
+
+
         }
     }
 }

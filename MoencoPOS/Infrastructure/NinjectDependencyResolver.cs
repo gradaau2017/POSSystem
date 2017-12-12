@@ -46,6 +46,8 @@ namespace MoencoPOS.Infrastructure
 
             kernel.Bind<MoencoPos.Product.Services.IBranchService>().To<MoencoPos.Product.Services.BranchService>();
 
+            kernel.Bind<MoencoPos.Product.Services.IProductService>().To<MoencoPos.Product.Services.ProductService>();
+
             kernel.Bind<MoencoPOS.DAL.UnitOfWork.IUnitOfWork>().To<MoencoPOS.DAL.UnitOfWork.UnitOfWork>();
         }
     }

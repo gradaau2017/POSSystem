@@ -14,6 +14,8 @@ namespace MoencoPOS.DAL.UnitOfWork
         IGenericRepository<SalesInvoice> SalesInvoiceRepository { get; }
         IGenericRepository<Category> CategoryRepository { get; }
         IGenericRepository<Branch> BranchRepository { get; }
+        IGenericRepository<Productc> ProductcRepository { get; }
+
 
 
         void Save();
