@@ -40,7 +40,7 @@ namespace MoencoPOS.Infrastructure
                                                                                        ConnectionStrings["SecurityContext"].ConnectionString);
             kernel.Bind<NetSqlAzManRoleProvider>().To<NetSqlAzManRoleProvider>();
 
-            kernel.Bind<MoencoPOS.Services.ISalesInvoiceService>().To<MoencoPOS.Services.SalesInvoiceService>();
+            kernel.Bind<MoencoPos.Sales.Services.ISalesInvoiceService>().To<MoencoPos.Sales.Services.SalesInvoiceService>();
 
             kernel.Bind<MoencoPos.Product.Services.ICategoryService>().To<MoencoPos.Product.Services.CategoryService>();
 

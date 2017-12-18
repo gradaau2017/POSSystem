@@ -171,7 +171,7 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductcsController.cs" />
-    <Compile Include="Controllers\SalesInvoiceController.cs" />
+    <Compile Include="Controllers\SalesInvoicesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -219,7 +219,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\SalesInvoice\Index.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -242,6 +244,11 @@
     <Content Include="Views\Productcs\Details.cshtml" />
     <Content Include="Views\Productcs\Edit.cshtml" />
     <Content Include="Views\Productcs\Index.cshtml" />
+    <Content Include="Views\SalesInvoices\Create.cshtml" />
+    <Content Include="Views\SalesInvoices\Delete.cshtml" />
+    <Content Include="Views\SalesInvoices\Details.cshtml" />
+    <Content Include="Views\SalesInvoices\Edit.cshtml" />
+    <Content Include="Views\SalesInvoices\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -268,9 +275,9 @@
       <Project>{c6fcb914-1c3f-4ba6-9dc6-37b68b221543}</Project>
       <Name>MoencoPos.Product.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MoencoPOS.Services\MoencoPOS.Services.csproj">
-      <Project>{b3276134-c056-4d0b-9646-98cfa4fdfaa4}</Project>
-      <Name>MoencoPOS.Services</Name>
+    <ProjectReference Include="..\MoencoPos.Sales.Services1\MoencoPos.Sales.Services.csproj">
+      <Project>{14a2c9f7-4b0f-4c38-8d54-7440cd081872}</Project>
+      <Name>MoencoPos.Sales.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

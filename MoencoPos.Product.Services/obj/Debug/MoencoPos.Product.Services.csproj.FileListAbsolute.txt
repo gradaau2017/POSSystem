@@ -11,3 +11,16 @@ E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Product.Services\bin\Debug\log4net.xml
 E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Product.Services\obj\Debug\MoencoPos.Product.Services.csprojResolveAssemblyReference.cache
 E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Product.Services\obj\Debug\MoencoPos.Product.Services.dll
 E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Product.Services\obj\Debug\MoencoPos.Product.Services.pdb
+D:\code\POSSystem\MoencoPos.Product.Services\bin\Debug\MoencoPos.Product.Services.dll
+D:\code\POSSystem\MoencoPos.Product.Services\bin\Debug\MoencoPos.Product.Services.pdb
+D:\code\POSSystem\MoencoPos.Product.Services\bin\Debug\MoencoPOS.DAL.dll
+D:\code\POSSystem\MoencoPos.Product.Services\bin\Debug\MoencoPOS.Models.dll
+D:\code\POSSystem\MoencoPos.Product.Services\bin\Debug\EntityFramework.dll
+D:\code\POSSystem\MoencoPos.Product.Services\bin\Debug\log4net.dll
+D:\code\POSSystem\MoencoPos.Product.Services\bin\Debug\MoencoPOS.DAL.pdb
+D:\code\POSSystem\MoencoPos.Product.Services\bin\Debug\MoencoPOS.Models.pdb
+D:\code\POSSystem\MoencoPos.Product.Services\bin\Debug\EntityFramework.xml
+D:\code\POSSystem\MoencoPos.Product.Services\bin\Debug\log4net.xml
+D:\code\POSSystem\MoencoPos.Product.Services\obj\Debug\MoencoPos.Product.Services.csprojResolveAssemblyReference.cache
+D:\code\POSSystem\MoencoPos.Product.Services\obj\Debug\MoencoPos.Product.Services.dll
+D:\code\POSSystem\MoencoPos.Product.Services\obj\Debug\MoencoPos.Product.Services.pdb

@@ -8,3 +8,7 @@ E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.Models\bin\Debug\MoencoPOS.Models.pdb
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.Models\obj\Debug\MoencoPOS.Models.dll
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.Models\obj\Debug\MoencoPOS.Models.pdb
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS.Models\obj\Debug\MoencoPOS.Models.csprojResolveAssemblyReference.cache
+D:\code\POSSystem\MoencoPOS.Models\bin\Debug\MoencoPOS.Models.dll
+D:\code\POSSystem\MoencoPOS.Models\bin\Debug\MoencoPOS.Models.pdb
+D:\code\POSSystem\MoencoPOS.Models\obj\Debug\MoencoPOS.Models.dll
+D:\code\POSSystem\MoencoPOS.Models\obj\Debug\MoencoPOS.Models.pdb

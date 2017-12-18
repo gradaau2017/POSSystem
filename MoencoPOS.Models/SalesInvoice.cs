@@ -15,5 +15,7 @@ namespace MoencoPOS.Models
         public int SalesType { get; set; }
         public int UserId { get; set; }
         public DateTime DateSold { get; set; }
+
+        public virtual ICollection<SalesLineItem> SalesLineItems { get; set; }
     }
 }
