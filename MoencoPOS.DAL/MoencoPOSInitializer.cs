@@ -51,6 +51,14 @@ namespace MoencoPOS.DAL
             productcs.ForEach(s => context.Productcs.Add(s));
             context.SaveChanges();
 
+            var stocks = new List<Stock>
+            {
+                new Stock { BranchId=1,ProductId=1, Quantity=5},
+                new Stock {BranchId=1,ProductId=2, Quantity=3}
+            };
+            stocks.ForEach(s => context.Stocks.Add(s));
+            context.SaveChanges();
+
 
         }
     }

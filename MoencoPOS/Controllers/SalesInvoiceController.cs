@@ -14,7 +14,6 @@ namespace MoencoPOS.Controllers
 {
     public class SalesController : Controller
     {
-       // private MoencoPOSContext db = new MoencoPOSContext();
 
         private readonly ISalesInvoiceService _salesService;
 

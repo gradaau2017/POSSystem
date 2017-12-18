@@ -16,5 +16,6 @@ namespace MoencoPOS.Models
         public virtual Productc Product { get; set; }
 
         public virtual Branch Branch { get; set; }
+        public virtual Productc Productc { get; set; }
     }
 }

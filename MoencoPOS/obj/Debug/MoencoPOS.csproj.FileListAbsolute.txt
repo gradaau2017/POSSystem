@@ -80,9 +80,6 @@ E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\roslyn\System.Reflection.Metadata.dll
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\roslyn\vbc.exe
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\roslyn\VBCSCompiler.exe
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\roslyn\VBCSCompiler.exe.config
-E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\NationalCriminalsDatabase.dll.config
-E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\NationalCriminalsDatabase.dll
-E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\NationalCriminalsDatabase.pdb
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\Antlr3.Runtime.dll
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\EntityFramework.dll
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\EntityFramework.SqlServer.dll
@@ -136,5 +133,8 @@ E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\System.Web.WebPages.Razor.xml
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\Antlr3.Runtime.pdb
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\Newtonsoft.Json.xml
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\obj\Debug\MoencoPOS.csprojResolveAssemblyReference.cache
-E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\obj\Debug\NationalCriminalsDatabase.dll
-E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\obj\Debug\NationalCriminalsDatabase.pdb
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\MoencoPOS.dll.config
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\MoencoPOS.dll
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\MoencoPOS.pdb
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\obj\Debug\MoencoPOS.dll
+E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\obj\Debug\MoencoPOS.pdb

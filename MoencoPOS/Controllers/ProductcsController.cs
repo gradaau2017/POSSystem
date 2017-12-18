@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using MoencoPOS.Models;
 using MoencoPos.Product.Services;
 
-namespace NationalCriminalsDatabase.Controllers
+namespace MoencoPOS.Controllers
 {
     public class ProductcsController : Controller
     {
