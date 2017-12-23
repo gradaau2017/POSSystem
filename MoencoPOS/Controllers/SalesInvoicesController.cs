@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using MoencoPOS.DAL;
 using MoencoPOS.Models;
 
-namespace NationalCriminalsDatabase.Controllers
+namespace MoencoPOS.Controllers
 {
     public class SalesInvoicesController : Controller
     {

@@ -5,7 +5,7 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace NationalCriminalsDatabase.Models
+namespace MoencoPOS.Models
 {
     public class ApplicationUser : IdentityUser
     {

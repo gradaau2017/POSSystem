@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace NationalCriminalsDatabase.Models
+namespace MoencoPOS.Models
 {
     public class RegisterViewModel
     {

@@ -10,7 +10,7 @@ using MoencoPOS.DAL;
 using MoencoPOS.Models;
 using MoencoPos.Product.Services;
 
-namespace NationalCriminalsDatabase.Controllers
+namespace MoencoPOS.Controllers
 {
     public class BranchesController : Controller
     {

@@ -7,6 +7,10 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using log4net.Core;
 using MoencoPOS.Infrastructure;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
+using MoencoPOS.Security;
 
 namespace MoencoPOS
 {
@@ -28,6 +32,34 @@ namespace MoencoPOS
 
             //log4net.Config.XmlConfigurator.Configure();
             //DependencyResolver.Current.GetService<ILogger>();
+
+            MyIdentityDbContext db = new MyIdentityDbContext();
+            RoleStore<MyIdentityRole> roleStore = new RoleStore<MyIdentityRole>(db);
+            RoleManager<MyIdentityRole> roleManager = new RoleManager<MyIdentityRole>(roleStore);
+
+            if (!roleManager.RoleExists("Administrator"))
+            {
+                MyIdentityRole newRole = new MyIdentityRole("Administrator", "Administrators can add, edit and delete data.");
+                roleManager.Create(newRole);
+            }
+
+            if (!roleManager.RoleExists("SalesPerson"))
+            {
+                MyIdentityRole newRole = new MyIdentityRole("SalesPerson", "SalesPersons can only add or edit data.");
+                roleManager.Create(newRole);
+            }
+
+            if (!roleManager.RoleExists("Cashier"))
+            {
+                MyIdentityRole newRole = new MyIdentityRole("Cashier", "Cashiers can only add or edit data.");
+                roleManager.Create(newRole);
+            }
+
+            if (!roleManager.RoleExists("StoreKeeper"))
+            {
+                MyIdentityRole newRole = new MyIdentityRole("StoreKeeper", "StoreKeepers can only add or edit data.");
+                roleManager.Create(newRole);
+            }
         }
     }
 }
