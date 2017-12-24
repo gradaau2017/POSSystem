@@ -124,6 +124,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NetSqlAzMan-x64.3.6.0.15\lib\net40\NetSqlAzMan.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
@@ -134,15 +138,21 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -194,11 +204,6 @@
     <Reference Include="Antlr3.Runtime">
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -1331,11 +1336,32 @@
     <Content Include="Views\SalesInvoices\Details.cshtml" />
     <Content Include="Views\SalesInvoices\Edit.cshtml" />
     <Content Include="Views\SalesInvoices\Index.cshtml" />
-    <Content Include="Views\Account\register.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_MainLayout.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shared\NewTheme _MainLayout.cshtml" />
+    <Content Include="Views\Shared\NewTheme _MainLayout_Sidebar.cshtml" />
+    <Content Include="Views\Shared\NewTheme_BreadCrumb.cshtml" />
+    <Content Include="Views\Shared\NewTheme_MainMenu.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AmharicDatePicker.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AmharicTextArea.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AmharicTextBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GuidTemplate.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Number.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_MainLayout.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_ToolbarCommon.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangeProfile.cshtml" />
+    <Content Include="Views\Account\Users.cshtml" />
+    <Content Include="Views\Account\EditUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\assetss\admin\img\" />

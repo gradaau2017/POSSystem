@@ -8,6 +8,7 @@ namespace MoencoPOS.Models
 {
     public class Register
     {
+        public string Id { get; set; }
         [Required]
         public string UserName { get; set; }
         [Required]
@@ -21,5 +22,6 @@ namespace MoencoPOS.Models
         public string FullName { get; set; }
         public DateTime BirthDate { get; set; }
         public string Bio { get; set; }
+        public string Role { get; set; }
     }
 }

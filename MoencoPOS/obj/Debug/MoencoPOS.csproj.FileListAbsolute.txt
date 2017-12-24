@@ -213,6 +213,7 @@ D:\code\POSSystem\MoencoPOS\bin\Microsoft.Owin.Security.xml
 D:\code\POSSystem\MoencoPOS\bin\Microsoft.Owin.Security.Cookies.xml
 D:\code\POSSystem\MoencoPOS\bin\Microsoft.Owin.Security.OAuth.xml
 D:\code\POSSystem\MoencoPOS\bin\NetSqlAzMan.xml
+D:\code\POSSystem\MoencoPOS\bin\Newtonsoft.Json.xml
 D:\code\POSSystem\MoencoPOS\bin\Ninject.xml
 D:\code\POSSystem\MoencoPOS\bin\System.Web.Helpers.xml
 D:\code\POSSystem\MoencoPOS\bin\System.Web.Mvc.xml
@@ -222,7 +223,6 @@ D:\code\POSSystem\MoencoPOS\bin\System.Web.WebPages.xml
 D:\code\POSSystem\MoencoPOS\bin\System.Web.WebPages.Deployment.xml
 D:\code\POSSystem\MoencoPOS\bin\System.Web.WebPages.Razor.xml
 D:\code\POSSystem\MoencoPOS\bin\Antlr3.Runtime.pdb
-D:\code\POSSystem\MoencoPOS\bin\Newtonsoft.Json.xml
 D:\code\POSSystem\MoencoPOS\obj\Debug\MoencoPOS.csprojResolveAssemblyReference.cache
 D:\code\POSSystem\MoencoPOS\obj\Debug\MoencoPOS.dll
 D:\code\POSSystem\MoencoPOS\obj\Debug\MoencoPOS.pdb

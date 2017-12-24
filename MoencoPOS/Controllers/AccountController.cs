@@ -32,19 +32,13 @@ namespace MoencoPOS.Controllers
             roleManager = new RoleManager<MyIdentityRole>(roleStore);
 
         }
-
-
-
-
-
-
+        
         public ActionResult Register()
         {
+            ViewBag.Role = new SelectList(roleManager.Roles, "Id", "Name");
             return View();
         }
-
-
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Register(Register model)
@@ -58,13 +52,14 @@ namespace MoencoPOS.Controllers
                 user.FullName = model.FullName;
                 user.BirthDate = model.BirthDate;
                 user.Bio = model.Bio;
+                user.Role = roleManager.FindById(model.Role).Name;
 
                 IdentityResult result = userManager.Create(user, model.Password);
 
                 if (result.Succeeded)
                 {
-                    userManager.AddToRole(user.Id, "Administrator");
-                    return RedirectToAction("Login", "Account");
+                    userManager.AddToRole(user.Id, roleManager.FindById(model.Role).Name);
+                    return RedirectToAction("Users", "Account");
                 }
                 else
                 {
@@ -74,7 +69,48 @@ namespace MoencoPOS.Controllers
             return View(model);
         }
 
+        public ActionResult EditUser(string id)
+        {
+            ViewBag.RoleList = new SelectList(roleManager.Roles, "Id", "Name");
+            var user = userManager.FindById(id);
+            return View(user);
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditUser(Register model, string RoleList)
+        {
+            var user = userManager.FindById(model.Id);
+            user.UserName = model.UserName;
+            user.Email = model.Email;
+            user.FullName = model.FullName;
+            user.BirthDate = model.BirthDate;
+            user.Bio = model.Bio;
+
+            string userRole = null;
+            if (user.Role != roleManager.FindById(RoleList).Name)
+            {
+                userRole = user.Role;
+                user.Role = roleManager.FindById(RoleList).Name;                
+            }
+            
+            IdentityResult result = userManager.Update(user);
+
+            if (result.Succeeded)
+            {
+                if (userRole!=null)
+                {
+                    userManager.RemoveFromRole(user.Id, userRole);
+                    userManager.AddToRole(user.Id, user.Role);
+                }               
+                return RedirectToAction("Users", "Account");
+            }
+            else
+            {
+                ModelState.AddModelError("UserName", "Error while editing the user!");
+            }
+            return RedirectToAction("EditUser", "Account", new { id = user.Id });
+        }
 
         public ActionResult Login(string returnUrl)
         {
@@ -191,6 +227,19 @@ namespace MoencoPOS.Controllers
             return RedirectToAction("Login", "Account");
         }
 
+        [Authorize]
+        public ActionResult Users()
+        {
+            var users = userManager.Users;
+            return View(users);
+        }
 
+        [Authorize]
+        public ActionResult DeleteUser(string id)
+        {
+            var user = userManager.FindById(id);
+            userManager.Delete(user);
+            return RedirectToAction("Users", "Account");
+        }
     }
 }

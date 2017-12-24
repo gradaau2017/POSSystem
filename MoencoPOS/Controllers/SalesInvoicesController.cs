@@ -83,7 +83,7 @@ namespace MoencoPOS.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(salesInvoice).State = EntityState.Modified;
+                db.Entry(salesInvoice).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

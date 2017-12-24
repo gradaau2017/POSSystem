@@ -1,0 +1,117 @@
+﻿@using MoencoPOS.Security
+
+@model IEnumerable<MyIdentityUser>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/NewTheme _MainLayout_Sidebar.cshtml";
+}
+
+<div class="row">
+    
+    <div class="col-md-9  col-sm-9">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-green-sharp">
+                    <i class="icon-list font-green-sharp"></i>
+                    <span class="caption-subject bold uppercase">Users</span>
+                </div>
+                <div class="tools">
+                    <a href="#" class="collapse" data-original-title="" title=""></a>
+                </div>
+                <div class="actions">
+                    <a href="@Url.Action("Register", "Account")" class="btn green" btn-success=""
+                           data-buttontype="btn_new_record"><i class="fa fa-plus"></i>Register User</a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-responsive" style="overflow:visible !important;">
+                    <table class="table table-striped table-condensed ">
+                        <thead>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Birth Date</th>
+                                <th>Bio</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (MyIdentityUser item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.FullName
+                                    </td>
+                                    <td>
+                                        @item.Email
+                                    </td>
+                                    <td>
+                                        @item.BirthDate
+                                    </td>
+                                    <td>
+                                        @item.Bio
+                                    </td>
+                                    <td>
+                                        @item.Role
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a class="btn yellow btn-sm" href="@Url.Action("EditUser", "Account")/@item.Id"><span class="fa fa-edit"></span>Edit</a>
+                                            <a class="btn red btn-sm btn-delete-user" href="#" userId="@item.Id"><span class="fa fa-times-circle"></span>Delete</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                //}
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="cats-modal-user-delete">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 id="myModalLabel" class="modal-title">Delete User</h4>
+            </div>
+
+
+            <div class="modal-body">
+
+                <p>
+                    Are you sure do you want to delete the User?
+                </p>
+
+            </div>
+            <div class="modal-footer">
+                <button id="yes-delete" class="btn btn-primary" type="submit">Yes</button>
+                <button id="no" class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $(".btn-delete-user").click(function () {
+            var userId = $(this).attr('userId');
+            $('#cats-modal-user-delete').modal('show');
+
+            $("#yes-delete").click(function () {
+
+                window.location = "@Url.Action("DeleteUser", "Account")" + "/" + userId;
+
+            });
+        });
+    });
+</script>

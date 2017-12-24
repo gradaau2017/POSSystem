@@ -35,9 +35,10 @@ namespace MoencoPOS.Controllers
             //{
             //    model = northwindDb.Customers.Where(c => c.Country == "USA").ToList();
             //}
-
-            ViewBag.FullName = user.FullName;
-
+            if(user!=null)
+                ViewBag.FullName = user.FullName;
+            else
+                ViewBag.FullName = "Admin";
             //return View(model);
             return View();
         }

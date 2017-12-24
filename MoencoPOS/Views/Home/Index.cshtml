@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-    Layout = null;
+    Layout = "~/Views/Shared/NewTheme _MainLayout_Sidebar.cshtml";
 }
 @model IEnumerable<MoencoPOS.Models.Productc>
 
@@ -15,73 +15,8 @@
     <h1>This is a secured page !</h1>
     <h2>Welcome @ViewBag.FullName !</h2>
     <br />
-    @Html.ActionLink("Change Password", "ChangePassword", "Account")
-    <br /><br />
-    @Html.ActionLink("Modify Profile", "ChangeProfile", "Account")
-    <br /><br />
-    <form action="/account/logout" method="post">
-        @Html.AntiForgeryToken()
-        <input type="submit" value="Logout" />
-    </form>
+    
     <br />
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Category.CategoryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Model)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UnitOfMeasure)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UnitCost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UnitPrice)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductDescription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Model)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UnitOfMeasure)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UnitCost)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UnitPrice)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductcId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ProductcId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductcId })
-                </td>
-            </tr>
-        }
-
-    </table>
+    <h2>Home</h2>
 </body>
 </html>

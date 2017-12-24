@@ -15,6 +15,8 @@ namespace MoencoPOS.Security
         public string FullName { get; set; }
         public DateTime BirthDate { get; set; }
         public string Bio { get; set; }
+
+        public string Role { get; set; }
     }
   
 }
