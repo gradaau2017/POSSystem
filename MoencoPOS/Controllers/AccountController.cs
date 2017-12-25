@@ -35,14 +35,15 @@ namespace MoencoPOS.Controllers
         
         public ActionResult Register()
         {
-            ViewBag.Role = new SelectList(roleManager.Roles, "Id", "Name");
+            ViewBag.RoleList = new SelectList(roleManager.Roles, "Id", "Name");
             return View();
         }
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(Register model)
+        public ActionResult Register(Register model, string RoleList)
         {
+            ViewBag.RoleList = new SelectList(roleManager.Roles, "Id", "Name");
             if (ModelState.IsValid)
             {
                 MyIdentityUser user = new MyIdentityUser();
@@ -52,13 +53,13 @@ namespace MoencoPOS.Controllers
                 user.FullName = model.FullName;
                 user.BirthDate = model.BirthDate;
                 user.Bio = model.Bio;
-                user.Role = roleManager.FindById(model.Role).Name;
+                user.Role = roleManager.FindById(RoleList).Name;
 
                 IdentityResult result = userManager.Create(user, model.Password);
 
                 if (result.Succeeded)
                 {
-                    userManager.AddToRole(user.Id, roleManager.FindById(model.Role).Name);
+                    userManager.AddToRole(user.Id, roleManager.FindById(RoleList).Name);
                     return RedirectToAction("Users", "Account");
                 }
                 else

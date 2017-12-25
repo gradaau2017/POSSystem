@@ -147,3 +147,13 @@ src/*/obj/*
 /.vs/Cats/v14/.suo
 /packages
 /Web/Properties/PublishProfiles/cats.pubxml.user
+
+MoencoPOS.DAL/bin/*
+MoencoPOS.DAL/obj/*
+MoencoPOS.Models/*
+MoencoPOS/bin/*
+MoencoPOS/obj/*
+MoencoPos.Product.Services/bin/*
+MoencoPos.Product.Services/obj/*
+MoencoPos.Sales.Services1/bin/*
+MoencoPos.Sales.Services1/obj/*
