@@ -12,7 +12,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 using MoencoPOS.Models;
 using MoencoPOS.Security;
-
+using MoencoPos.Product.Services;
 
 namespace MoencoPOS.Controllers
 {
@@ -20,9 +20,12 @@ namespace MoencoPOS.Controllers
     {
         private UserManager<MyIdentityUser> userManager;
         private RoleManager<MyIdentityRole> roleManager;
-
-        public AccountController()
+        private readonly IBranchService _branchService;
+                
+        public AccountController(IBranchService branchService)
         {
+            _branchService = branchService;
+
             MyIdentityDbContext db = new MyIdentityDbContext();
 
             UserStore<MyIdentityUser> userStore = new UserStore<MyIdentityUser>(db);
@@ -36,12 +39,13 @@ namespace MoencoPOS.Controllers
         public ActionResult Register()
         {
             ViewBag.RoleList = new SelectList(roleManager.Roles, "Id", "Name");
+            ViewBag.BranchList = new SelectList(_branchService.GetAllBranches(), "BranchId", "BranchName");
             return View();
         }
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(Register model, string RoleList)
+        public ActionResult Register(Register model, string RoleList, int BranchList)
         {
             ViewBag.RoleList = new SelectList(roleManager.Roles, "Id", "Name");
             if (ModelState.IsValid)
@@ -54,6 +58,7 @@ namespace MoencoPOS.Controllers
                 user.BirthDate = model.BirthDate;
                 user.Bio = model.Bio;
                 user.Role = roleManager.FindById(RoleList).Name;
+                user.BranchId = BranchList;
 
                 IdentityResult result = userManager.Create(user, model.Password);
 
@@ -73,13 +78,14 @@ namespace MoencoPOS.Controllers
         public ActionResult EditUser(string id)
         {
             ViewBag.RoleList = new SelectList(roleManager.Roles, "Id", "Name");
+            ViewBag.BranchList = new SelectList(_branchService.GetAllBranches(), "BranchId", "BranchName");
             var user = userManager.FindById(id);
             return View(user);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditUser(Register model, string RoleList)
+        public ActionResult EditUser(Register model, string RoleList, int BranchList)
         {
             var user = userManager.FindById(model.Id);
             user.UserName = model.UserName;
@@ -87,6 +93,7 @@ namespace MoencoPOS.Controllers
             user.FullName = model.FullName;
             user.BirthDate = model.BirthDate;
             user.Bio = model.Bio;
+            user.BranchId = BranchList;
 
             string userRole = null;
             if (user.Role != roleManager.FindById(RoleList).Name)
@@ -232,7 +239,24 @@ namespace MoencoPOS.Controllers
         public ActionResult Users()
         {
             var users = userManager.Users;
-            return View(users);
+            var registers = new List<Register>();
+            foreach(var user in users)
+            {
+                var register = new Register
+                {
+                    Id = user.Id,
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    FullName = user.FullName,
+                    BirthDate = user.BirthDate,
+                    Bio = user.Bio,
+                    BranchId = user.BranchId,
+                    BranchName = _branchService.FindById(user.BranchId).BranchName,
+                    Role = user.Role
+                };
+                registers.Add(register);
+            }
+            return View(registers);
         }
 
         [Authorize]

@@ -43,6 +43,7 @@
             <li class="classic-menu-dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Sales Management <b class="caret"></b></a>
                 <ul class="dropdown-menu">
+                    <li class="classic-menu-dropdown">@Html.ActionLink("Customer", "Index", "Customers")</li>
                     <li class="classic-menu-dropdown">@Html.ActionLink("Sales", "Index", "SalesInvoices")</li>
                 </ul>
             </li>
@@ -61,7 +62,20 @@
         <!-- BEGIN TOP NAVIGATION MENU -->
         <div class="top-menu">
             <ul class="nav navbar-nav pull-right">
-                <li class="classic-menu-dropdown">
+                <li class="classic-menu-dropdown">                    
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">@HttpContext.Current.User.Identity.Name<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="classic-menu-dropdown">@Html.ActionLink("Change Password", "ChangePassword", "Account")</li>
+                        <li class="classic-menu-dropdown">@Html.ActionLink("Modify Profile", "ChangeProfile", "Account")</li>
+                        <li class="classic-menu-dropdown">
+                            <form action="/account/logout" method="post">
+                                @Html.AntiForgeryToken()
+                                <input type="submit" class="btn red btn-sm" value="Logout" style="margin-top: 10px;width: 100%;" />
+                            </form>
+                        </li>   
+                    </ul>
+                </li>
+                @*<li class="classic-menu-dropdown">
                     @Html.ActionLink("Change Password", "ChangePassword", "Account")
                 </li>
                 <li class="classic-menu-dropdown">
@@ -72,7 +86,7 @@
                         @Html.AntiForgeryToken()
                         <input type="submit" class="btn red btn-sm" value="Logout" style="margin-top: 10px"/>
                     </form>
-                </li>                
+                </li>*@                
             </ul>
         </div>
         <!-- END TOP NAVIGATION MENU -->

@@ -17,6 +17,7 @@ namespace MoencoPOS.Security
         public string Bio { get; set; }
 
         public string Role { get; set; }
+        public int BranchId { get; set; }
     }
   
 }

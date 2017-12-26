@@ -32,7 +32,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoencoPOS.Tests", "MoencoPO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoencoPos.Product.Services", "MoencoPos.Product.Services\MoencoPos.Product.Services.csproj", "{C6FCB914-1C3F-4BA6-9DC6-37B68B221543}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoencoPos.Sales.Services", "MoencoPos.Sales.Services1\MoencoPos.Sales.Services.csproj", "{14A2C9F7-4B0F-4C38-8D54-7440CD081872}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoencoPos.Sales.Services", "MoencoPos.Sales.Services\MoencoPos.Sales.Services.csproj", "{14A2C9F7-4B0F-4C38-8D54-7440CD081872}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetIdentityDemo", "..\AspNetIdentityDemo\AspNetIdentityDemo.csproj", "{96D62DBA-7D65-4A3B-879F-99F267DCF928}"
 EndProject

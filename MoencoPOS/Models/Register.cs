@@ -23,5 +23,7 @@ namespace MoencoPOS.Models
         public DateTime BirthDate { get; set; }
         public string Bio { get; set; }
         public string Role { get; set; }
+        public int BranchId { get; set; }
+        public string BranchName { get; set; }
     }
 }

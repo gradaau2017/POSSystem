@@ -1,6 +1,6 @@
-﻿@using MoencoPOS.Security
+﻿@using MoencoPOS.Models
 
-@model IEnumerable<MyIdentityUser>
+@model IEnumerable<Register>
 
 @{
     ViewBag.Title = "Users";
@@ -33,12 +33,13 @@
                                 <th>Email</th>
                                 <th>Birth Date</th>
                                 <th>Bio</th>
+                                <th>Branch</th>
                                 <th>Role</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (MyIdentityUser item in Model)
+                            @foreach (Register item in Model)
                             {
                                 <tr>
                                     <td>
@@ -52,6 +53,9 @@
                                     </td>
                                     <td>
                                         @item.Bio
+                                    </td>
+                                    <td>
+                                        @item.BranchName
                                     </td>
                                     <td>
                                         @item.Role

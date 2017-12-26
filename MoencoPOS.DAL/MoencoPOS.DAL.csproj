@@ -56,6 +56,10 @@
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\AspNetIdentityDemo\AspNetIdentityDemo.csproj">
+      <Project>{96D62DBA-7D65-4A3B-879F-99F267DCF928}</Project>
+      <Name>AspNetIdentityDemo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MoencoPOS.Models\MoencoPOS.Models.csproj">
       <Project>{12c866fd-7e2a-41e0-8d1e-856e2c847702}</Project>
       <Name>MoencoPOS.Models</Name>

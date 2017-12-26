@@ -138,6 +138,7 @@ E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\bin\Newtonsoft.Json.xml
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\obj\Debug\MoencoPOS.csprojResolveAssemblyReference.cache
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\obj\Debug\NationalCriminalsDatabase.dll
 E:\Pro-Repo\Git\MoencoPOS\MoencoPOS\obj\Debug\NationalCriminalsDatabase.pdb
+D:\code\POSSystem\MoencoPOS\obj\Debug\MoencoPOS.csprojResolveAssemblyReference.cache
 D:\code\POSSystem\MoencoPOS\bin\ApplicationInsights.config
 D:\code\POSSystem\MoencoPOS\bin\roslyn\csc.exe
 D:\code\POSSystem\MoencoPOS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -223,6 +224,5 @@ D:\code\POSSystem\MoencoPOS\bin\System.Web.WebPages.xml
 D:\code\POSSystem\MoencoPOS\bin\System.Web.WebPages.Deployment.xml
 D:\code\POSSystem\MoencoPOS\bin\System.Web.WebPages.Razor.xml
 D:\code\POSSystem\MoencoPOS\bin\Antlr3.Runtime.pdb
-D:\code\POSSystem\MoencoPOS\obj\Debug\MoencoPOS.csprojResolveAssemblyReference.cache
 D:\code\POSSystem\MoencoPOS\obj\Debug\MoencoPOS.dll
 D:\code\POSSystem\MoencoPOS\obj\Debug\MoencoPOS.pdb

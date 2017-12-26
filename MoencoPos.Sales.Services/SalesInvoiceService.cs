@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using MoencoPOS.DAL.UnitOfWork;
 using MoencoPOS.Models;
 
-namespace MoencoPOS.Services
+namespace MoencoPos.Sales.Services
 {
     public class SalesInvoiceService : ISalesInvoiceService
     {

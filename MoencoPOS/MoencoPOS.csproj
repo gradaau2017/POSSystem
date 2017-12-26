@@ -215,6 +215,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BranchesController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductcsController.cs" />
     <Compile Include="Controllers\SalesInvoicesController.cs" />
@@ -225,9 +226,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ChangePassword.cs" />
     <Compile Include="Models\ChangeProfile.cs" />
-    <Compile Include="Models\Customer.cs">
-      <DependentUpon>NorthwindModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\NorthwindModel.Context.cs">
@@ -246,6 +244,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Models\Register.cs" />
+    <Compile Include="Models\ViewModels\SalesInvoiceLineItemViewModel.cs" />
+    <Compile Include="Models\ViewModels\SalesInvoiceViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\MyIdentityDbContext.cs" />
     <Compile Include="Security\MyIdentityRole.cs" />
@@ -1305,7 +1305,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\SalesInvoice\Index.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1362,6 +1361,11 @@
     <Content Include="Views\Account\ChangeProfile.cshtml" />
     <Content Include="Views\Account\Users.cshtml" />
     <Content Include="Views\Account\EditUser.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\assetss\admin\img\" />
@@ -1470,7 +1474,7 @@
       <Project>{c6fcb914-1c3f-4ba6-9dc6-37b68b221543}</Project>
       <Name>MoencoPos.Product.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MoencoPos.Sales.Services1\MoencoPos.Sales.Services.csproj">
+    <ProjectReference Include="..\MoencoPos.Sales.Services\MoencoPos.Sales.Services.csproj">
       <Project>{14a2c9f7-4b0f-4c38-8d54-7440cd081872}</Project>
       <Name>MoencoPos.Sales.Services</Name>
     </ProjectReference>

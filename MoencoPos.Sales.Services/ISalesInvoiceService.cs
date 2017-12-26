@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MoencoPOS.Models;
 
-namespace MoencoPOS.Services
+namespace MoencoPos.Sales.Services
 {
     public interface ISalesInvoiceService : IDisposable
     {

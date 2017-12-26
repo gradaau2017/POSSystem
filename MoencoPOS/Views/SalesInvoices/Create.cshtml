@@ -1,72 +1,276 @@
-﻿@model MoencoPOS.Models.SalesInvoice
+﻿@model MoencoPOS.Models.ViewModels.SalesInvoiceViewModel
 
 @{
     ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/NewTheme _MainLayout_Sidebar.cshtml";
 }
 
-<h2>Create</h2>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register Customer</title>
+</head>
+<body>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>SalesInvoice</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.CustomerId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CustomerId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <div class="row">
+        <div class="col-md-11">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption font-green-sharp">
+                        <i class="icon-list font-green-sharp"></i>
+                        <span class="caption-subject bold uppercase">Create Sales Invoice</span>
+                    </div>
+                    <div class="tools">
+                        <a href="#" class="collapse" data-original-title="" title=""></a>
+                    </div>
+                    <div class="actions">
+                        @if (ViewBag.SalesInvoiceId == null || ViewBag.SalesInvoiceId == 0)
+                        {
+                            <a class="btn green btn-sm" data-buttontype="btn_save" onclick="javascript: document.getElementById('frm_create_sales_invoice').submit()" data-submittedform="frm_create_sales_invoice">
+                                <span class="fa fa-save"></span> Save</a>
+                            <a class="btn red btn-sm" href="@Url.Action("Index", "SalesInvoices")"><span class="fa fa-times-circle"></span> Cancel</a>
+                        }
+                        else
+                        {
+                            <a class="btn green btn-sm" href="@Url.Action("Checkout", "SalesInvoices", new { id = ViewBag.SalesInvoiceId })"><span class="fa fa-plus"></span> Checkout</a>
+                            <a class="btn red btn-sm" href="@Url.Action("Index", "SalesInvoices")"><span class="fa fa-times-circle"></span> Cancel</a>
+                        }
+                        <a class="btn btn-icon-only btn-default fullscreen"></a>
+                    </div>
+                </div>
+                <div class="portlet-body row">
+                    @using (Html.BeginForm("Create", "SalesInvoices", FormMethod.Post, new { id = "frm_create_sales_invoice", @class = "form-horizontal" }))
+                    {
+                        @Html.AntiForgeryToken();
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.SalesInvoiceId)
+                        <div class="col-md-offset-1 col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.UserName, new { @class = "col-sm-4 control-label" })
+                                <div class="col-sm-8">
+                                    @ViewBag.UserName
+                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.BranchName, new { @class = "col-sm-4 control-label" })
+                                <div class="col-sm-8">
+                                    @ViewBag.BranchName
+                                    @Html.ValidationMessageFor(model => model.BranchName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ReferenceNo, new { @class = "col-sm-4 control-label" })
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => m.ReferenceNo, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.CustomerName, new { @class = "col-sm-4 control-label" })
+                                <div class="col-sm-8">
+                                    @Html.DropDownList("CustomerId", (SelectList)ViewData["CustomerList"])
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.SalesType, new { @class = "col-sm-4 control-label" })
+                                <div class="col-sm-8">
+                                    <select id="SalesTypeList" name="SalesTypeList">
+                                        @if (ViewBag.SalesType != null)
+                                        {
+                                            if (ViewBag.SalesType == 0)
+                                            {
+                                                <option value="0" selected="selected">Credit</option>
+                                                <option value="1">Cash</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="0">Credit</option>
+                                                <option value="1" selected="selected">Cash</option>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <option value="1">Credit</option>
+                                            <option value="2">Cash</option>
+                                        }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.BranchId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BranchId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BranchId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SalesType, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SalesType, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SalesType, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DateSold, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DateSold, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DateSold, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                                    </select>
+                                </div>
+                            </div>                           
+                        </div>
+                    }
+                    @ViewBag.Message
+                </div>
             </div>
         </div>
     </div>
-}
+    @if (ViewBag.SalesInvoiceId != null && ViewBag.SalesInvoiceId != 0)
+    {
+        <div class="row">
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+            <div class="col-md-11  col-sm-11">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption font-green-sharp">
+                            <i class="icon-list font-green-sharp"></i>
+                            <span class="caption-subject bold uppercase">Line Items</span>
+                        </div>
+                        <div class="tools">
+                            <a href="#" class="collapse" data-original-title="" title=""></a>
+                        </div>
+                        <div class="actions">
+                            <a class="btn green btn-sm btn-add-sales-invoice-line-item" href="#" salesInvoiceId="@ViewBag.SalesInvoiceId"><i class="fa fa-plus"></i>Add Line Item</a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-responsive" style="overflow:visible !important;">
+                            <table class="table table-striped table-condensed ">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Product Name
+                                        </th>
+                                        <th>
+                                            Unit Price
+                                        </th>
+                                        <th>
+                                            Quantity
+                                        </th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (MoencoPOS.Models.ViewModels.SalesInvoiceLineItemViewModel item in ViewBag.SalesLineItemViewModels)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Productname)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.UnitPrice)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Quantity)
+                                            </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a class="btn red btn-sm btn-delete-sales-invoice-line-item" href="#" salesInvoiceLineItemId="@item.SalesInvoiceId">
+                                                        <span class="fa fa-times-circle"></span>Delete</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        //}
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" id="cats-modal-sales-invoice-line-item-delete">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                <h4 id="myModalLabel" class="modal-title">Delete Sales Invoice Line Item</h4>
+                            </div>
+
+
+                            <div class="modal-body">
+
+                                <p>
+                                    Are you sure do you want to delete the Sales Invoice Line Item?
+                                </p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button id="yes-delete" class="btn btn-primary" type="submit">Yes</button>
+                                <button id="no" class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" id="cats-modal-sales-invoice-line-item-add">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            @using (Html.BeginForm("AddLineItem", "SalesInvoices", FormMethod.Post, new { id = "frm_create_sales_invoice", @class = "form-horizontal" }))
+                            {
+                            <div class="modal-header">
+                                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                <h4 id="myModalLabel" class="modal-title">Add Sales Invoice Line Item</h4>
+                            </div>
+
+
+                            <div class="modal-body">
+
+                                <div class="portlet-body row">
+                                    
+                                        @Html.AntiForgeryToken();
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        @Html.HiddenFor(model => model.SalesInvoiceId)
+                                        <div class="col-md-offset-1 col-md-6">
+                                            <div class="form-group">
+                                                <div class="pull-left">Product</div>
+                                                <div class="col-sm-8">
+                                                    @Html.DropDownList("ProductId", (SelectList)ViewData["ProductList"])
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="pull-left">Quantity</div>
+                                                <div class="col-sm-8">
+                                                    <input class="form-control valid" id="Quantity" name="Quantity" type="text" placeholder="Enter Quantity Here">
+                                                </div>
+                                            </div>                                          
+                                        </div>
+                                    
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button id="yes-delete" class="btn btn-primary" type="submit">Add</button>
+                                <button id="no" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                            </div>
+                            }
+                            @ViewBag.Message
+
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+            $(function () {
+                $(".btn-delete-sales-invoice-line-item").click(function () {
+                    var salesInvoiceLineItemId = $(this).attr('salesInvoiceLineItemId');
+                    $('#cats-modal-sales-invoice-line-item-delete').modal('show');
+
+                    $("#yes-delete").click(function () {
+
+                        window.location = "@Url.Action("DeleteLineItem", "SalesInvoices")" + "/" + salesInvoiceLineItemId;
+
+                    });
+                });
+
+                $(".btn-add-sales-invoice-line-item").click(function () {
+                    var salesInvoiceLineItemId = $(this).attr('salesInvoiceLineItemId');
+                    $('#cats-modal-sales-invoice-line-item-add').modal('show');
+
+                    $("#yes-delete").click(function () {
+
+                        window.location = "@Url.Action("AddLineItem", "SalesInvoices")" + "/" + salesInvoiceLineItemId;
+
+                    });
+                });
+            });
+        </script>
+    }
+</body>
+</html>

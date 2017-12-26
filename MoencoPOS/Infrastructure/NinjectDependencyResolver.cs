@@ -42,11 +42,13 @@ namespace MoencoPOS.Infrastructure
 
             kernel.Bind<MoencoPos.Sales.Services.ISalesInvoiceService>().To<MoencoPos.Sales.Services.SalesInvoiceService>();
 
+            kernel.Bind<MoencoPos.Sales.Services.ICustomerService>().To<MoencoPos.Sales.Services.CustomerService>();
+
             kernel.Bind<MoencoPos.Product.Services.ICategoryService>().To<MoencoPos.Product.Services.CategoryService>();
 
             kernel.Bind<MoencoPos.Product.Services.IBranchService>().To<MoencoPos.Product.Services.BranchService>();
 
-            kernel.Bind<MoencoPos.Product.Services.IProductService>().To<MoencoPos.Product.Services.ProductService>();
+            kernel.Bind<MoencoPos.Product.Services.IProductService>().To<MoencoPos.Product.Services.ProductService>();            
 
             kernel.Bind<MoencoPOS.DAL.UnitOfWork.IUnitOfWork>().To<MoencoPOS.DAL.UnitOfWork.UnitOfWork>();
         }
