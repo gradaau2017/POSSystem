@@ -34,6 +34,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoencoPOS.Tests", "MoencoPO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoencoPos.Product.Services", "MoencoPos.Product.Services\MoencoPos.Product.Services.csproj", "{C6FCB914-1C3F-4BA6-9DC6-37B68B221543}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoencoPos.Store.Service", "MoencoPos.Store.Service\MoencoPos.Store.Service.csproj", "{B680879D-3C74-4C6A-8D1E-D0235BD89AE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{C6FCB914-1C3F-4BA6-9DC6-37B68B221543}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6FCB914-1C3F-4BA6-9DC6-37B68B221543}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6FCB914-1C3F-4BA6-9DC6-37B68B221543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B680879D-3C74-4C6A-8D1E-D0235BD89AE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B680879D-3C74-4C6A-8D1E-D0235BD89AE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B680879D-3C74-4C6A-8D1E-D0235BD89AE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B680879D-3C74-4C6A-8D1E-D0235BD89AE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,5 +81,6 @@ Global
 		{B3276134-C056-4D0B-9646-98CFA4FDFAA4} = {2B14CBF7-C005-4DAF-8D5B-21F5D5032635}
 		{637B03EA-B7C5-4463-B051-D316AB6B805B} = {7DFD392F-0E4B-4172-885A-59FF11F8479D}
 		{C6FCB914-1C3F-4BA6-9DC6-37B68B221543} = {2B14CBF7-C005-4DAF-8D5B-21F5D5032635}
+		{B680879D-3C74-4C6A-8D1E-D0235BD89AE4} = {2B14CBF7-C005-4DAF-8D5B-21F5D5032635}
 	EndGlobalSection
 EndGlobal

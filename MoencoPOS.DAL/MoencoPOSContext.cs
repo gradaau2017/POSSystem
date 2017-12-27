@@ -16,6 +16,8 @@ namespace MoencoPOS.DAL
         public DbSet<Branch> Branches { get; set; }
         public DbSet<Productc> Productcs { get; set; }
         public DbSet<Stock> Stocks { get; set; }
+        public DbSet<ProductReceiveInvoice> ProductReceiveInvoices { get; set; }
+        public DbSet<ProductReceiveLineItem> ProductReceiveLineItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

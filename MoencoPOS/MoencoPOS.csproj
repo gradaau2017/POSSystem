@@ -171,6 +171,7 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductcsController.cs" />
+    <Compile Include="Controllers\ProductReceiveInvoicesController.cs" />
     <Compile Include="Controllers\SalesInvoiceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -242,6 +243,11 @@
     <Content Include="Views\Productcs\Details.cshtml" />
     <Content Include="Views\Productcs\Edit.cshtml" />
     <Content Include="Views\Productcs\Index.cshtml" />
+    <Content Include="Views\ProductReceiveInvoices\Delete.cshtml" />
+    <Content Include="Views\ProductReceiveInvoices\Details.cshtml" />
+    <Content Include="Views\ProductReceiveInvoices\Edit.cshtml" />
+    <Content Include="Views\ProductReceiveInvoices\Index.cshtml" />
+    <Content Include="Views\ProductReceiveInvoices\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

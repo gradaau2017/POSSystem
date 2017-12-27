@@ -59,6 +59,18 @@ namespace MoencoPOS.DAL
             stocks.ForEach(s => context.Stocks.Add(s));
             context.SaveChanges();
 
+            var receiveInvoice = new ProductReceiveInvoice { UserId = "00001", BranchId = 1, DateReceived = DateTime.Parse("2017-12-09") };
+            //receiveInvoices.ForEach(s => context.ProductReceiveInvoices.Add(s));
+            var receiveLineItems = new List<ProductReceiveLineItem>
+            {
+                new ProductReceiveLineItem { ProductId=1,Quantity=1, UnitCost=200000.00M},
+                new ProductReceiveLineItem { ProductId=2,Quantity=1, UnitCost=350000.00M}
+            };
+
+            receiveInvoice.ProductReceiveLineItems = receiveLineItems;
+            context.ProductReceiveInvoices.Add(receiveInvoice);
+            context.SaveChanges();
+
 
         }
     }
