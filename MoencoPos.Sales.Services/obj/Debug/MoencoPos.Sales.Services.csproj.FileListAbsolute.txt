@@ -12,16 +12,3 @@ D:\code\POSSystem\MoencoPos.Sales.Services\bin\Debug\log4net.xml
 D:\code\POSSystem\MoencoPos.Sales.Services\obj\Debug\MoencoPos.Sales.Services.csprojResolveAssemblyReference.cache
 D:\code\POSSystem\MoencoPos.Sales.Services\obj\Debug\MoencoPos.Sales.Services1.dll
 D:\code\POSSystem\MoencoPos.Sales.Services\obj\Debug\MoencoPos.Sales.Services1.pdb
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\bin\Debug\MoencoPos.Sales.Services1.dll
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\bin\Debug\MoencoPos.Sales.Services1.pdb
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\bin\Debug\MoencoPOS.DAL.dll
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\bin\Debug\MoencoPOS.Models.dll
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\bin\Debug\EntityFramework.dll
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\bin\Debug\log4net.dll
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\bin\Debug\MoencoPOS.DAL.pdb
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\bin\Debug\MoencoPOS.Models.pdb
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\bin\Debug\EntityFramework.xml
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\bin\Debug\log4net.xml
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\obj\Debug\MoencoPos.Sales.Services.csprojResolveAssemblyReference.cache
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\obj\Debug\MoencoPos.Sales.Services1.dll
-E:\Pro-Repo\Git\MoencoPOS\MoencoPos.Sales.Services\obj\Debug\MoencoPos.Sales.Services1.pdb
