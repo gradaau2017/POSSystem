@@ -48,6 +48,8 @@
     <Compile Include="Productc.cs" />
     <Compile Include="ProductReceive.cs" />
     <Compile Include="ProductReceiveLineItem.cs" />
+    <Compile Include="ProductTransfer.cs" />
+    <Compile Include="ProductTransferLineItem.cs" />
     <Compile Include="SalesInvoice.cs" />
     <Compile Include="Mapping\AddressMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

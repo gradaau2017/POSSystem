@@ -14,6 +14,9 @@ namespace MoencoPos.Store.Services
         bool DeleteProductReceive(ProductReceive productReceive);
         bool DeleteById(int id);
         bool EditProductReceive(ProductReceive productReceive);
+        bool AddProductReceiveLineItem(ProductReceive productReceive, ProductReceiveLineItem item);
+        bool DeleteProductReceiveLineItem(ProductReceive productReceive, ProductReceiveLineItem lineItem);
+        ProductReceiveLineItem FindLineItemById(int Id);
         ProductReceive FindById(int id);
         List<ProductReceive> GetAllProductReceive();
         List<ProductReceive> FindBy(Expression<Func<ProductReceive, bool>> predicate);

@@ -32,6 +32,14 @@ namespace MoencoPos.Store.Services
             return true;
         }
 
+        public bool AddProductReceiveLineItem(ProductReceive productReceive, ProductReceiveLineItem item)
+        {
+            _unitOfWork.ProductReceiveRepository.Edit(productReceive);
+            AddLineItemStock(item, productReceive.BranchId);
+            _unitOfWork.Save();
+            return true;
+        }
+
         void AddLineItemStock(ProductReceiveLineItem item, int branchId)
         {
             var stock = _unitOfWork.StockRepository.FindBy(x => x.BranchId == branchId
@@ -51,6 +59,36 @@ namespace MoencoPos.Store.Services
                 stock.Quantity = stock.Quantity + item.Quantity;
                 _unitOfWork.StockRepository.Edit(stock);
             }
+
+            var product = _unitOfWork.ProductcRepository.FindById(item.ProductId);
+            product.UnitCost = item.UnitCost;
+            _unitOfWork.ProductcRepository.Edit(product);
+        }
+
+        public bool DeleteProductReceiveLineItem(ProductReceive productReceive, ProductReceiveLineItem lineItem)
+        {
+            _unitOfWork.ProductReceiveRepository.Edit(productReceive);
+            SubtractLineItemStock(lineItem, productReceive.BranchId);
+            _unitOfWork.Save();
+            ResetProductCost(lineItem);
+            _unitOfWork.Save();
+            return true;
+        }
+
+        void SubtractLineItemStock(ProductReceiveLineItem item, int branchId)
+        {
+            var stock = _unitOfWork.StockRepository.FindBy(x => x.BranchId == branchId
+                                                                && x.ProductId == item.ProductId).SingleOrDefault();
+            stock.Quantity = stock.Quantity - item.Quantity;
+            _unitOfWork.StockRepository.Edit(stock);
+
+        }
+
+        private void ResetProductCost(ProductReceiveLineItem item)
+        {
+            var product = _unitOfWork.ProductcRepository.FindById(item.ProductId);
+            product.UnitCost = _unitOfWork.ProductReceiveLineItemRepository.FindBy(x => x.ProductId == item.ProductId).LastOrDefault().UnitCost;
+            _unitOfWork.ProductcRepository.Edit(product);
         }
 
         public bool DeleteById(int id)
@@ -91,6 +129,12 @@ namespace MoencoPos.Store.Services
         {
             return _unitOfWork.ProductReceiveRepository.FindById(id);
         }
+
+        public ProductReceiveLineItem FindLineItemById(int id)
+        {
+            return _unitOfWork.ProductReceiveLineItemRepository.FindById(id);
+        }
+
 
         public IEnumerable<ProductReceive> Get(Expression<Func<ProductReceive, bool>> filter = null, Func<IQueryable<ProductReceive>, IOrderedQueryable<ProductReceive>> orderBy = null, string includeProperties = "")
         {

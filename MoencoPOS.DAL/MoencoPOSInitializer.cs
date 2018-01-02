@@ -67,7 +67,6 @@ namespace MoencoPOS.DAL
             context.SaveChanges();
 
             var receiveInvoice = new ProductReceive { UserId = "746f1fd5-68b8-49ab-b0d8-9fe906048a1a", BranchId = 1, DateReceived = DateTime.Parse("2017-12-09") };
-            //receiveInvoices.ForEach(s => context.ProductReceiveInvoices.Add(s));
             var receiveLineItems = new List<ProductReceiveLineItem>
             {
                 new ProductReceiveLineItem { ProductId=1,Quantity=1, UnitCost=200000.00M},
@@ -77,6 +76,18 @@ namespace MoencoPOS.DAL
             receiveInvoice.ProductReceiveLineItems = receiveLineItems;
             context.ProductReceives.Add(receiveInvoice);
             context.SaveChanges();
+
+            var transferInvoice = new ProductTransfer { UserId = "746f1fd5-68b8-49ab-b0d8-9fe906048a1a", FromBranchId = 1, ToBranchId = 2, DateTransfered = DateTime.Parse("2017-12-09") };
+            var transferLineItems = new List<ProductTransferLineItem>
+            {
+                new ProductTransferLineItem { ProductId=1,Quantity=1},
+                new ProductTransferLineItem { ProductId=2,Quantity=1}
+            };
+
+            transferInvoice.ProductTransferLineItems = transferLineItems;
+            context.ProductTransfers.Add(transferInvoice);
+            context.SaveChanges();
+
 
         }
     }

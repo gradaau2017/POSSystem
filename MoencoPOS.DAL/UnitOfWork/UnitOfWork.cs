@@ -85,6 +85,18 @@ namespace MoencoPOS.DAL.UnitOfWork
             get { return this.productReceiveLineItemRepository ?? (this.productReceiveLineItemRepository = new GenericRepository<ProductReceiveLineItem>(_context)); }
         }
 
+        public IGenericRepository<ProductTransfer> productTransferRepository;
+        public IGenericRepository<ProductTransfer> ProductTransferRepository
+        {
+            get { return this.productTransferRepository ?? (this.productTransferRepository = new GenericRepository<ProductTransfer>(_context)); }
+        }
+
+        public IGenericRepository<ProductTransferLineItem> productTransferLineItemRepository;
+        public IGenericRepository<ProductTransferLineItem> ProductTransferLineItemRepository
+        {
+            get { return this.productTransferLineItemRepository ?? (this.productTransferLineItemRepository = new GenericRepository<ProductTransferLineItem>(_context)); }
+        }
+
 
         private readonly ILog _log;
         public void Save()

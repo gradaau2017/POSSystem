@@ -29,19 +29,10 @@
                         <thead>
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.ProductReceiveId)
-                                </th>
-                                <th>
                                     @Html.DisplayNameFor(model => model.DateReceived)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.BranchId)
-                                </th>
-                                <th>
                                     @Html.DisplayNameFor(model => model.BranchName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.UserId)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.UserName)
@@ -55,19 +46,10 @@
                             {
                                 <tr>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.ProductReceiveId)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.DateReceived)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.BranchId)
+                                        @Html.DisplayFor(modelItem => item.DateReceived.Date)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.BranchName)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.UserId)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.UserName)

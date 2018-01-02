@@ -19,6 +19,8 @@ namespace MoencoPOS.DAL
         public DbSet<Customer> Customers { get; set; }
         public DbSet<ProductReceive> ProductReceives { get; set; }
         public DbSet<ProductReceiveLineItem> ProductReceiveLineItems { get; set; }
+        public DbSet<ProductTransfer> ProductTransfers { get; set; }
+        public DbSet<ProductTransferLineItem> ProductTransferLineItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

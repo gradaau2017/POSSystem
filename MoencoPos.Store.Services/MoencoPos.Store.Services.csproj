@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IProductReceiveService.cs" />
+    <Compile Include="IProductTransferService.cs" />
     <Compile Include="ProductReceiveService.cs" />
+    <Compile Include="ProductTransferService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

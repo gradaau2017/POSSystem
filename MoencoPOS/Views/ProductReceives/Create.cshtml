@@ -27,8 +27,8 @@
                     }
                     else
                     {
-                        <a class="btn green btn-sm" href="@Url.Action("Save", "SalesInvoices", new { id = ViewBag.SalesInvoiceId })"><span class="fa fa-plus"></span> Checkout</a>
-                            <a class="btn red btn-sm" href="@Url.Action("Index", "ProductReceives")"><span class="fa fa-times-circle"></span> Cancel</a>
+                        @*<a class="btn green btn-sm" href="@Url.Action("Save", "SalesInvoices", new { id = ViewBag.SalesInvoiceId })"><span class="fa fa-plus"></span> Checkout</a>*@
+                            <a class="btn red btn-sm" href="@Url.Action("Index", "ProductReceives")"><span class="fa fa-times-circle"></span> Close</a>
                     }
                     <a class="btn btn-icon-only btn-default fullscreen"></a>
                 </div>
@@ -190,6 +190,13 @@
                                                 <input class="form-control valid" id="Quantity" name="Quantity" type="text" placeholder="Enter Quantity Here">
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <div class="pull-left">Unit Cost</div>
+                                            <div class="col-sm-8">
+                                                <input class="form-control valid" id="UnitCost" name="UnitCost" type="text" placeholder="Enter Unit Cost Here">
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                 </div>
@@ -221,12 +228,12 @@
                 });
 
                 $(".btn-add-product-receive-line-item").click(function () {
-                    var productReceiveLineItemId = $(this).attr('productReceiveLineItemId');
+                    var productReceiveId = $(this).attr('productReceiveId');
                     $('#cats-modal-product-receive-line-item-add').modal('show');
 
                     $("#yes-delete").click(function () {
 
-                        window.location = "@Url.Action("AddLineItem", "ProductReceives")" + "/" + productReceiveLineItemId;
+                        window.location = "@Url.Action("AddLineItem", "ProductReceives")" + "/" + productReceiveId;
 
                     });
                 });

@@ -161,7 +161,7 @@ namespace MoencoPOS.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddLineItem([Bind(Include = "ProductReceiveId,Quantity,ProductId")] ProductReceiveLineItemViewModel productReceiveLineItemViewModel)
+        public ActionResult AddLineItem([Bind(Include = "ProductReceiveId,Quantity,ProductId,UnitCost")] ProductReceiveLineItemViewModel productReceiveLineItemViewModel)
         {
             var productReceive = _productReceiveService.Get(t => t.ProductReceiveId == productReceiveLineItemViewModel.ProductReceiveId, null, "ProductReceiveLineItems").FirstOrDefault();
             int exists = productReceive.ProductReceiveLineItems.Where(t => t.ProductId == productReceiveLineItemViewModel.ProductId).ToList().Count;
@@ -174,12 +174,22 @@ namespace MoencoPOS.Controllers
                 ProductId = productReceiveLineItemViewModel.ProductId,
                 Quantity = productReceiveLineItemViewModel.Quantity,
                 ProductReceiveId = productReceiveLineItemViewModel.ProductReceiveId,
-                UnitCost = _productService.FindById(productReceiveLineItemViewModel.ProductId).UnitCost
+                UnitCost = productReceiveLineItemViewModel.UnitCost, //_productService.FindById(productReceiveLineItemViewModel.ProductId).UnitCost
             };
             productReceive.ProductReceiveLineItems.Add(productReceiveLineItem);
-            _productReceiveService.EditProductReceive(productReceive);
+            _productReceiveService.AddProductReceiveLineItem(productReceive, productReceiveLineItem);
             return RedirectToAction("Create", "ProductReceives", new { id = productReceive.ProductReceiveId });
         }
+
+        public ActionResult DeleteLineItem(int id)
+        {
+            var lineItem = _productReceiveService.FindLineItemById(id);
+            var productReceive = _productReceiveService.FindById(lineItem.ProductReceiveId);
+            productReceive.ProductReceiveLineItems.Remove(lineItem);
+            _productReceiveService.DeleteProductReceiveLineItem(productReceive, lineItem);
+            return RedirectToAction("Create", "ProductReceives", new { id = productReceive.ProductReceiveId });
+        }
+
 
         // GET: ProductReceives/Edit/5
         public ActionResult Edit(int? id)
