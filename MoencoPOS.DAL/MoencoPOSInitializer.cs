@@ -34,8 +34,8 @@ namespace MoencoPOS.DAL
             context.SaveChanges();
             var salesInvoices = new List<SalesInvoice>
             {
-                new SalesInvoice { SalesInvoiceId=1,CustomerId=1,BranchId=1,SalesType=0,UserId="6caa0371-fef5-499d-9131-2b1f87a0f18c",DateSold=DateTime.Parse("2016-10-09")},
-                new SalesInvoice { SalesInvoiceId=2,CustomerId=2,BranchId=2,SalesType=1,UserId="6caa0371-fef5-499d-9131-2b1f87a0f18c",DateSold=DateTime.Parse("2016-10-09")}
+                new SalesInvoice { SalesInvoiceId=1,CustomerId=1,BranchId=1,SalesType=0,UserId="746f1fd5-68b8-49ab-b0d8-9fe906048a1a",DateSold=DateTime.Parse("2016-10-09")},
+                new SalesInvoice { SalesInvoiceId=2,CustomerId=2,BranchId=2,SalesType=1,UserId="746f1fd5-68b8-49ab-b0d8-9fe906048a1a",DateSold=DateTime.Parse("2016-10-09")}
             };
             salesInvoices.ForEach(s => context.SalesInvoices.Add(s));
             context.SaveChanges();
@@ -57,7 +57,27 @@ namespace MoencoPOS.DAL
             };
             productcs.ForEach(s => context.Productcs.Add(s));
             context.SaveChanges();
-            
+
+            var stocks = new List<Stock>
+            {
+                new Stock { BranchId=1,ProductId=1, Quantity=5},
+                new Stock {BranchId=1,ProductId=2, Quantity=3}
+            };
+            stocks.ForEach(s => context.Stocks.Add(s));
+            context.SaveChanges();
+
+            var receiveInvoice = new ProductReceive { UserId = "746f1fd5-68b8-49ab-b0d8-9fe906048a1a", BranchId = 1, DateReceived = DateTime.Parse("2017-12-09") };
+            //receiveInvoices.ForEach(s => context.ProductReceiveInvoices.Add(s));
+            var receiveLineItems = new List<ProductReceiveLineItem>
+            {
+                new ProductReceiveLineItem { ProductId=1,Quantity=1, UnitCost=200000.00M},
+                new ProductReceiveLineItem { ProductId=2,Quantity=1, UnitCost=350000.00M}
+            };
+
+            receiveInvoice.ProductReceiveLineItems = receiveLineItems;
+            context.ProductReceives.Add(receiveInvoice);
+            context.SaveChanges();
+
         }
     }
 }

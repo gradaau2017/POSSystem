@@ -104,8 +104,8 @@
       <HintPath>..\packages\Microsoft.Owin.4.0.0-preview1\lib\net451\Microsoft.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0-preview1\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -218,6 +218,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductcsController.cs" />
+    <Compile Include="Controllers\ProductReceivesController.cs" />
     <Compile Include="Controllers\SalesInvoicesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -244,6 +245,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Models\Register.cs" />
+    <Compile Include="Models\ViewModels\ProductReceiveLineItemViewModel.cs" />
+    <Compile Include="Models\ViewModels\ProductReceiveViewModel.cs" />
     <Compile Include="Models\ViewModels\SalesInvoiceLineItemViewModel.cs" />
     <Compile Include="Models\ViewModels\SalesInvoiceViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1366,6 +1369,11 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\ProductReceives\Create.cshtml" />
+    <Content Include="Views\ProductReceives\Delete.cshtml" />
+    <Content Include="Views\ProductReceives\Details.cshtml" />
+    <Content Include="Views\ProductReceives\Edit.cshtml" />
+    <Content Include="Views\ProductReceives\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\assetss\admin\img\" />
@@ -1477,6 +1485,10 @@
     <ProjectReference Include="..\MoencoPos.Sales.Services\MoencoPos.Sales.Services.csproj">
       <Project>{14a2c9f7-4b0f-4c38-8d54-7440cd081872}</Project>
       <Name>MoencoPos.Sales.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoencoPos.Store.Services\MoencoPos.Store.Services.csproj">
+      <Project>{7001feaf-2904-471b-9c11-2f7e160d8dda}</Project>
+      <Name>MoencoPos.Store.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
