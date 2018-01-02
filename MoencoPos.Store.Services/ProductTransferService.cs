@@ -25,8 +25,8 @@ namespace MoencoPos.Store.Services
             {
                 foreach (var item in productTransfer.ProductTransferLineItems)
                 {
-                    AddLineItemStock(item, productTransfer.FromBranchId);
-                    SubtractLineItemStock(item, productTransfer.ToBranchId);
+                    AddLineItemStock(item, productTransfer.ToBranchId);
+                    SubtractLineItemStock(item, productTransfer.FromBranchId);
                 }
             }
             _unitOfWork.Save();
@@ -66,8 +66,8 @@ namespace MoencoPos.Store.Services
         public bool AddProductTransferLineItem(ProductTransfer productTransfer, ProductTransferLineItem item)
         {
             _unitOfWork.ProductTransferRepository.Edit(productTransfer);
-            AddLineItemStock(item, productTransfer.FromBranchId);
-            SubtractLineItemStock(item, productTransfer.ToBranchId);
+            AddLineItemStock(item, productTransfer.ToBranchId);
+            SubtractLineItemStock(item, productTransfer.FromBranchId);
             _unitOfWork.Save();
             return true;
         }

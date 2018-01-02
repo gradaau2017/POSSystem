@@ -67,10 +67,9 @@ namespace MoencoPos.Store.Services
 
         public bool DeleteProductReceiveLineItem(ProductReceive productReceive, ProductReceiveLineItem lineItem)
         {
-            _unitOfWork.ProductReceiveRepository.Edit(productReceive);
+            //_unitOfWork.ProductReceiveRepository.Edit(productReceive);
+            _unitOfWork.ProductReceiveLineItemRepository.Delete(lineItem);
             SubtractLineItemStock(lineItem, productReceive.BranchId);
-            _unitOfWork.Save();
-            ResetProductCost(lineItem);
             _unitOfWork.Save();
             return true;
         }

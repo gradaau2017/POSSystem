@@ -34,8 +34,8 @@ namespace MoencoPOS.DAL
             context.SaveChanges();
             var salesInvoices = new List<SalesInvoice>
             {
-                new SalesInvoice { SalesInvoiceId=1,CustomerId=1,BranchId=1,SalesType=0,UserId="746f1fd5-68b8-49ab-b0d8-9fe906048a1a",DateSold=DateTime.Parse("2016-10-09")},
-                new SalesInvoice { SalesInvoiceId=2,CustomerId=2,BranchId=2,SalesType=1,UserId="746f1fd5-68b8-49ab-b0d8-9fe906048a1a",DateSold=DateTime.Parse("2016-10-09")}
+                new SalesInvoice { SalesInvoiceId=1,CustomerId=1,BranchId=1,SalesType=0,UserId="98f74499-a614-4373-aacd-5eec5b46ef95",DateSold=DateTime.Parse("2016-10-09")},
+                new SalesInvoice { SalesInvoiceId=2,CustomerId=2,BranchId=2,SalesType=1,UserId="98f74499-a614-4373-aacd-5eec5b46ef95",DateSold=DateTime.Parse("2016-10-09")}
             };
             salesInvoices.ForEach(s => context.SalesInvoices.Add(s));
             context.SaveChanges();
@@ -66,7 +66,7 @@ namespace MoencoPOS.DAL
             stocks.ForEach(s => context.Stocks.Add(s));
             context.SaveChanges();
 
-            var receiveInvoice = new ProductReceive { UserId = "746f1fd5-68b8-49ab-b0d8-9fe906048a1a", BranchId = 1, DateReceived = DateTime.Parse("2017-12-09") };
+            var receiveInvoice = new ProductReceive { UserId = "98f74499-a614-4373-aacd-5eec5b46ef95", BranchId = 1, DateReceived = DateTime.Parse("2017-12-09") };
             var receiveLineItems = new List<ProductReceiveLineItem>
             {
                 new ProductReceiveLineItem { ProductId=1,Quantity=1, UnitCost=200000.00M},
@@ -77,7 +77,7 @@ namespace MoencoPOS.DAL
             context.ProductReceives.Add(receiveInvoice);
             context.SaveChanges();
 
-            var transferInvoice = new ProductTransfer { UserId = "746f1fd5-68b8-49ab-b0d8-9fe906048a1a", FromBranchId = 1, ToBranchId = 2, DateTransfered = DateTime.Parse("2017-12-09") };
+            var transferInvoice = new ProductTransfer { UserId = "98f74499-a614-4373-aacd-5eec5b46ef95", FromBranchId = 1, ToBranchId = 2, DateTransfered = DateTime.Parse("2017-12-09") };
             var transferLineItems = new List<ProductTransferLineItem>
             {
                 new ProductTransferLineItem { ProductId=1,Quantity=1},

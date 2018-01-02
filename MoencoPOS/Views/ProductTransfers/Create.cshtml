@@ -1,0 +1,236 @@
+﻿@model MoencoPOS.Models.ViewModels.ProductTransferViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/NewTheme _MainLayout_Sidebar.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-11">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-green-sharp">
+                    <i class="icon-list font-green-sharp"></i>
+                    <span class="caption-subject bold uppercase">Create Product Transfer</span>
+                </div>
+                <div class="tools">
+                    <a href="#" class="collapse" data-original-title="" title=""></a>
+                </div>
+                <div class="actions">
+                    @if (ViewBag.ProductTransferId == null || ViewBag.ProductTransferId == 0)
+                    {
+                        <a class="btn green btn-sm" data-buttontype="btn_save" onclick="javascript: document.getElementById('frm_create_product_transfer').submit()" data-submittedform="frm_create_product_receive">
+                            <span class="fa fa-save"></span> Save
+                        </a>
+                        <a class="btn red btn-sm" href="@Url.Action("Index", "ProductTransfers")"><span class="fa fa-times-circle"></span> Cancel</a>
+                    }
+                    else
+                    {
+                        @*<a class="btn green btn-sm" href="@Url.Action("Save", "SalesInvoices", new { id = ViewBag.SalesInvoiceId })"><span class="fa fa-plus"></span> Checkout</a>*@
+                        <a class="btn red btn-sm" href="@Url.Action("Index", "ProductTransfers")"><span class="fa fa-times-circle"></span> Close</a>
+                    }
+                    <a class="btn btn-icon-only btn-default fullscreen"></a>
+                </div>
+            </div>
+            <div class="portlet-body row">
+                @using (Html.BeginForm("Create", "ProductTransfers", FormMethod.Post, new { id = "frm_create_product_transfer", @class = "form-horizontal" }))
+                {
+                    @Html.AntiForgeryToken();
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.ProductTransferId)
+                    <div class="col-md-offset-1 col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.UserName, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @ViewBag.UserName
+                                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.FromBranchName, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @*@Html.DropDownList("FromBranchId", (SelectList)ViewData["BranchList"])*@
+                                @ViewBag.FromBranchName
+                                @Html.ValidationMessageFor(model => model.FromBranchName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.ToBranchName, new { @class = "col-sm-4 control-label" })
+                            <div class="col-sm-8">
+                                @*@Html.DropDownList("ToBranchId", (SelectList)ViewData["BranchList"])*@
+                                @ViewBag.ToBranchName
+                                @Html.ValidationMessageFor(model => model.ToBranchName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                }
+                @ViewBag.Message
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.ProductTransferId != null && ViewBag.ProductTransferId != 0)
+{
+
+    <div class="row">
+
+        <div class="col-md-11  col-sm-11">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption font-green-sharp">
+                        <i class="icon-list font-green-sharp"></i>
+                        <span class="caption-subject bold uppercase">Line Items</span>
+                    </div>
+                    <div class="tools">
+                        <a href="#" class="collapse" data-original-title="" title=""></a>
+                    </div>
+                    <div class="actions">
+                        <a class="btn green btn-sm btn-add-product-transfer-line-item" href="#" productTransferId="@ViewBag.productTransferId"><i class="fa fa-plus"></i>Add Line Item</a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-responsive" style="overflow:visible !important;">
+                        <table class="table table-striped table-condensed ">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Product Name
+                                    </th>
+                                    <th>
+                                        Quantity
+                                    </th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (MoencoPOS.Models.ViewModels.ProductTransferLineItemViewModel item in ViewBag.ProductTransferLineItemViewModels)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Productname)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Quantity)
+                                        </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn red btn-sm btn-delete-product-transfer-line-item" href="#" productTransferLineItemId="@item.ProductTransferLineItemId">
+                                                    <span class="fa fa-times-circle"></span>Delete
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    //}
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="cats-modal-product-transfer-line-item-delete">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                    <h4 id="myModalLabel" class="modal-title">Delete Product Transfer Line Item</h4>
+                </div>
+
+
+                <div class="modal-body">
+
+                    <p>
+                        Are you sure do you want to delete the Product Transfer Line Item?
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="yes-delete" class="btn btn-primary" type="submit">Yes</button>
+                    <button id="no" class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="cats-modal-product-transfer-line-item-add">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                @using (Html.BeginForm("AddLineItem", "ProductTransfers", FormMethod.Post, new { id = "frm_create_product_transfer", @class = "form-horizontal" }))
+                {
+                    <div class="modal-header">
+                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                        <h4 id="myModalLabel" class="modal-title">Add Product Transfer Line Item</h4>
+                    </div>
+
+
+                    <div class="modal-body">
+
+                        <div class="portlet-body row">
+
+                            @Html.AntiForgeryToken();
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.ProductTransferId)
+                            <div class="col-md-offset-1 col-md-6">
+                                <div class="form-group">
+                                    <div class="pull-left">Product</div>
+                                    <div class="col-sm-8">
+                                        @Html.DropDownList("ProductId", (SelectList)ViewData["ProductList"])
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="pull-left">Quantity</div>
+                                    <div class="col-sm-8">
+                                        <input class="form-control valid" id="Quantity" name="Quantity" type="text" placeholder="Enter Quantity Here">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                            <div class="modal-footer">
+                                <button id="yes-delete" class="btn btn-primary" type="submit">Add</button>
+                                <button id="no" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                            </div>
+                }
+                @ViewBag.Message
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+            $(function () {
+                $(".btn-delete-product-transfer-line-item").click(function () {
+                    var productTransferLineItemId = $(this).attr('productTransferLineItemId');
+                    $('#cats-modal-product-transfer-line-item-delete').modal('show');
+
+                    $("#yes-delete").click(function () {
+
+                        window.location = "@Url.Action("DeleteLineItem", "ProductTransfers")" + "/" + productTransferLineItemId;
+
+                    });
+                });
+
+                $(".btn-add-product-transfer-line-item").click(function () {
+                    var productTransferId = $(this).attr('productTransferId');
+                    $('#cats-modal-product-transfer-line-item-add').modal('show');
+
+                    $("#yes-delete").click(function () {
+
+                        window.location = "@Url.Action("AddLineItem", "ProductTransfers")" + "/" + productTransferId;
+
+                    });
+                });
+            });
+    </script>
+
+}

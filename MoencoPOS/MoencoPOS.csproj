@@ -219,6 +219,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductcsController.cs" />
     <Compile Include="Controllers\ProductReceivesController.cs" />
+    <Compile Include="Controllers\ProductTransferController.cs" />
     <Compile Include="Controllers\SalesInvoicesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -247,6 +248,8 @@
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\ViewModels\ProductReceiveLineItemViewModel.cs" />
     <Compile Include="Models\ViewModels\ProductReceiveViewModel.cs" />
+    <Compile Include="Models\ViewModels\ProductTransferLineItemViewModel.cs" />
+    <Compile Include="Models\ViewModels\ProductTransferViewModel.cs" />
     <Compile Include="Models\ViewModels\SalesInvoiceLineItemViewModel.cs" />
     <Compile Include="Models\ViewModels\SalesInvoiceViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1374,6 +1377,9 @@
     <Content Include="Views\ProductReceives\Details.cshtml" />
     <Content Include="Views\ProductReceives\Edit.cshtml" />
     <Content Include="Views\ProductReceives\Index.cshtml" />
+    <Content Include="Views\ProductTransfers\Index.cshtml" />
+    <Content Include="Views\ProductTransfers\Details.cshtml" />
+    <Content Include="Views\ProductTransfers\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\assetss\admin\img\" />

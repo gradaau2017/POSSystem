@@ -52,6 +52,8 @@ namespace MoencoPOS.Infrastructure
 
             kernel.Bind<MoencoPos.Store.Services.IProductReceiveService>().To<MoencoPos.Store.Services.ProductReceiveService>();
 
+            kernel.Bind<MoencoPos.Store.Services.IProductTransferService>().To<MoencoPos.Store.Services.ProductTransferService>();
+
             kernel.Bind<MoencoPOS.DAL.UnitOfWork.IUnitOfWork>().To<MoencoPOS.DAL.UnitOfWork.UnitOfWork>();
         }
     }

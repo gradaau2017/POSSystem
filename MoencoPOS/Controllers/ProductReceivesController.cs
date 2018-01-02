@@ -57,6 +57,7 @@ namespace MoencoPOS.Controllers
                     BranchName = productReceive.Branch.BranchName,
                     DateReceived = productReceive.DateReceived,
                     ProductReceiveId = productReceive.ProductReceiveId,
+                    
                     UserId = productReceive.UserId,
                     UserName = userManager.FindById(productReceive.UserId).FullName
                 };
@@ -109,6 +110,7 @@ namespace MoencoPOS.Controllers
                 {
                     var productReceiveLineItemviewModel = new ProductReceiveLineItemViewModel()
                     {
+                        ProductReceiveLineItemId= productReceiveLineItem.ProductReceiveLineItemId,
                         ProductId = productReceiveLineItem.ProductId,
                         Productname = _productService.FindById(productReceiveLineItem.ProductId).ProductName,
                         Quantity = productReceiveLineItem.Quantity,
